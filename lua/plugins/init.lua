@@ -13,7 +13,6 @@ return {
       vim.opt.termguicolors = true
 
       require("nvim-highlight-colors").setup {
-        -- Project color | TODO: Find a way to link/load that for a specefic project.
         custom_colors = {
           { label = "bg%-accent", color = "#3D27C2FF" },
           { label = "bg%-elevated%-primary", color = "#FFFDF7FF" },

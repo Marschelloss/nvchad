@@ -80,6 +80,17 @@ end
 	end, { desc = "Harpoon - Go to " .. num })
 end ]]
 
+-- Window
+map("n", "|", '<cmd>vsplit<CR>', { desc = "Vertical Split"})
+map("n", "\\", '<cmd>split<CR>', { desc = "Horizontal Split"})
+map("v", "|", '<cmd>vsplit<CR>', { desc = "Vertical Split"})
+map("v", "\\", '<cmd>split<CR>', { desc = "Horizontal Split"})
+
+map("n", "<C-h>", '<cmd>wincmd h<CR>', { desc = "Move to left Window"})
+map("n", "<C-j>", '<cmd>wincmd j<CR>', { desc = "Move to down Window"})
+map("n", "<C-k>", '<cmd>wincmd k<CR>', { desc = "Move to up Window"})
+map("n", "<C-l>", '<cmd>wincmd l<CR>', { desc = "Move to right Window"})
+
 -- Visual mode
 map("v", "d", '"_d', { desc = "Delete without remove yank" })
 map("v", "D", '"_D', { desc = "Delete without remove yank" })
@@ -94,3 +105,8 @@ map("v", "<S-k>", '<cmd>lua MiniMove.move_selection("up")<cr>', { desc = "Move -
 map("v", "<S-j>", '<cmd>lua MiniMove.move_selection("down")<cr>', { desc = "Move - selection down" })
 map("v", "<S-h>", '<cmd>lua MiniMove.move_selection("left")<cr>', { desc = "Move - selection left" })
 map("v", "<S-l>", '<cmd>lua MiniMove.move_selection("right")<cr>', { desc = "Move - selection right" })
+
+-- Terminal Mode
+map("t", "<ESC>", '<C-\\><C-n>', { desc = "Exit Terminal Mode"})
+map("t", "<S-ESC>", '<C-\\><C-n><cmd>q<CR>', { desc = "Exit Terminal Mode"})
+
