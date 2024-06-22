@@ -7,7 +7,7 @@ local M = {}
 M.ui = {
   theme = "catppuccin",
 
-term = {
+  term = {
     -- hl = "Normal:term,WinSeparator:WinSeparator",
     -- sizes = { sp = 0.3, vsp = 0.2 },
     float = {
@@ -28,6 +28,19 @@ term = {
 
 M.plugins = "plugins"
 
+M.ui.statusline = {
+  theme = "minimal", -- default/vscode/vscode_colored/minimal
+  -- default/round/block/arrow separators work only for default statusline theme
+  -- round and block will work for minimal theme only
+  separator_style = "default",
+  order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor", "cwd" },
+  modules = {
+    cursor = function()
+      return "%#St_pos_sep# %#St_pos_icon# %#St_pos_text# %p %% "
+    end
+  },
+}
+
 M.ui.nvdash = {
   load_on_startup = true,
 
@@ -44,9 +57,10 @@ M.ui.nvdash = {
   },
 
   buttons = {
-    { "  Projects", "", "Telescope projects" },
-    { "  Themes  ", "", "Telescope themes" },
-    { "  Mappings", "", "NvCheatsheet" },
+    { "  Projects", "", "Telescope projects" },
+    { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
+    { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
+    { "  Bookmarks", "Spc m a", "Telescope marks" },
   },
 }
 
